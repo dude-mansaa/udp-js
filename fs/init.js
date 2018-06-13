@@ -15,7 +15,7 @@ Net.serve({
   },
 });
 
-let listener = HTTP.get_system_server();
+let listener = HTTP.bind('80');//HTTP.get_system_server();
 HTTP.add_endpoint(listener, '/foo', function(conn, ev, msg) {
   Net.send(conn, 'HTTP/1.0 200 OK\r\n\r\n');
   Net.send(conn, HTTP.param(msg, HTTP.MESSAGE));
