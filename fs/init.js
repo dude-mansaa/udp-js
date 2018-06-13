@@ -1,7 +1,6 @@
-
 load('api_net.js');
-load('api_http.js');
-
+load('api_rpc.js');
+load('api_pwm.js');
 
 Net.serve({
   addr: 'udp://1234',
@@ -15,12 +14,20 @@ Net.serve({
   },
 });
 
-let listener = HTTP.bind('80');//HTTP.get_system_server();
-HTTP.add_endpoint(listener, '/foo', function(conn, ev, msg) {
-  print('http event');
-  Net.send(conn, 'HTTP/1.0 200 OK\r\n\r\n');
-  Net.send(conn, HTTP.param(msg, HTTP.MESSAGE));
-  Net.close(conn);
-}, true);
-print('Light server started on port 80');
+let red = 4;
+let green = 15;
+let blue = 5;
+let white = 19;
+GPIO.set_mode(red,GPIO.MODE_OUTPUT);
+GPIO.set_mode(green,GPIO.MODE_OUTPUT);
+GPIO.set_mode(blue,GPIO.MODE_OUTPUT);
+GPIO.set_mode(white,GPIO.MODE_OUTPUT);
 
+RPC.addHandler('rgb',function(args){
+	PWM.set(red,(10*(args.r)),args.r/255);
+	PWM.set(green,(10*(args.g)),args.g/255);
+	PWM.set(red,(10*(args.b)),args.b/255);
+	PWM.set(red,(10*(args.w)),args.w/255);
+	return 'success';
+});
+PWM.set(red,1000,0.10);
