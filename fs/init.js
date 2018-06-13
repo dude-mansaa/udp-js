@@ -22,5 +22,5 @@ HTTP.add_endpoint(listener, '/foo', function(conn, ev, msg) {
   Net.send(conn, HTTP.param(msg, HTTP.MESSAGE));
   Net.close(conn);
 }, true);
-
+print('Light server started on port 80');
 
