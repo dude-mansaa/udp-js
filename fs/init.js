@@ -1,6 +1,7 @@
 load('api_net.js');
 load('api_rpc.js');
 load('api_pwm.js');
+load('api_gpio.js');
 
 Net.serve({
   addr: 'udp://1234',
