@@ -2,6 +2,7 @@ load('api_net.js');
 load('api_rpc.js');
 load('api_pwm.js');
 load('api_gpio.js');
+load('color.js');
 
 Net.serve({
   addr: 'udp://1234',
@@ -24,11 +25,7 @@ GPIO.set_mode(green,GPIO.MODE_OUTPUT);
 GPIO.set_mode(blue,GPIO.MODE_OUTPUT);
 GPIO.set_mode(white,GPIO.MODE_OUTPUT);
 
-RPC.addHandler('rgb',function(args){
-	PWM.set(red,(10*(args.r)),args.r/255);
-	PWM.set(green,(10*(args.g)),args.g/255);
-	PWM.set(blue,(10*(args.b)),args.b/255);
-	PWM.set(white,(10*(args.w)),args.w/255);
-	return 'success';
+RPC.addHandler('color',function(args){
+	return color(args);
 });
 //PWM.set(red,1000,0.10);
