@@ -1,4 +1,4 @@
-load(api_pwm.js);
+load('api_pwm.js');
 
 let red = 4;
 let green = 15;
