@@ -27,8 +27,8 @@ GPIO.set_mode(white,GPIO.MODE_OUTPUT);
 RPC.addHandler('rgb',function(args){
 	PWM.set(red,(10*(args.r)),args.r/255);
 	PWM.set(green,(10*(args.g)),args.g/255);
-	PWM.set(red,(10*(args.b)),args.b/255);
-	PWM.set(red,(10*(args.w)),args.w/255);
+	PWM.set(blue,(10*(args.b)),args.b/255);
+	PWM.set(white,(10*(args.w)),args.w/255);
 	return 'success';
 });
 //PWM.set(red,1000,0.10);
