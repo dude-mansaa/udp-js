@@ -13,12 +13,12 @@ GPIO.set_mode(white,GPIO.MODE_OUTPUT);
 let color = function(args){
   let r,g,b=0;
 	let model = args.p;
-	let i = floor(args.h/60);
-	let F = args.h-i;
+	let hi = floor(args.h/60);
+	let F = args.h-hi;
 	let P = args.v * (1-args.s);
 	let Q = args.v * (1 -F * args.s);
 	let T = args.v * (1 - args.s * (1-F));
-	if(i === 0){
+	if(hi === 0){
 		r = args.v;
 	    	g = T;
 	    	b = P;
