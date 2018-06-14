@@ -19,7 +19,7 @@ let color = function(args){
 	let DR,DG,DB,DW=0;
 	if(model === 'rgb'){
 		if(r > 0 && g > 0 && b > 0){
-			let avg = r+g+b/3
+			let avg = (r+g+b)/3
 			DR = 0;
 			DG = 0;
 			DB = 0;
@@ -42,7 +42,7 @@ let color = function(args){
 		}
 	}else if(model === 'ct'){
 		if(r > 0 && g > 0 && b > 0){
-			let avg = r+g+b/3
+			let avg = (r+g+b)/3
 			DR = 0;
 			DG = 0;
 			DB = 0;
