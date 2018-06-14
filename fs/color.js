@@ -23,17 +23,17 @@ let color = function(args){
 			DR = 0;
 			DG = 0;
 			DB = 0;
-			DW = avg;//avg*255/100;
+			DW = avg*255/100;
 			PWM.set(red,1000,DR);
 			PWM.set(green,1000,DG);
 			PWM.set(blue,1000,DB);
 			PWM.set(white,1000,DW);
 			return 'success'
 		}else{
-			DR = r;//*255/100;
-			DG = g;//*255/100;
-			DB = b;//*255/100;
-			DW = w*127/100;
+			DR = r*255/100;
+			DG = g*255/100;
+			DB = b*255/100;
+			DW = w*50/100;
 			PWM.set(red,1000,DR);
 			PWM.set(green,1000,DG);
 			PWM.set(blue,1000,DB);
@@ -53,9 +53,9 @@ let color = function(args){
 			PWM.set(white,1000,DW);
 			return 'success'
 		}else{
-			DR = r*127/100;
-			DG = g*127/100;
-			DB = b*127/100;
+			DR = r*50/100;
+			DG = g*50/100;
+			DB = b*50/100;
 			DW = w*255/100;
 			PWM.set(red,1000,DR);
 			PWM.set(green,1000,DG);
