@@ -31,4 +31,4 @@ RPC.addHandler('rgb',function(args){
 	PWM.set(red,(10*(args.w)),args.w/255);
 	return 'success';
 });
-PWM.set(red,1000,0.10);
+//PWM.set(red,1000,0.10);
