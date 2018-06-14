@@ -33,7 +33,7 @@ let color = function(args){
 			DR = r/255;
 			DG = g/255;
 			DB = b/255;
-			DW = w/200;
+			DW = w/350;
 			PWM.set(red,1000,DR);
 			PWM.set(green,1000,DG);
 			PWM.set(blue,1000,DB);
@@ -53,9 +53,9 @@ let color = function(args){
 			PWM.set(white,1000,DW);
 			return 'success'
 		}else{
-			DR = r/200;
-			DG = g/200;
-			DB = b/200;
+			DR = r/350;
+			DG = g/350;
+			DB = b/350;
 			DW = w/255;
 			PWM.set(red,1000,DR);
 			PWM.set(green,1000,DG);
