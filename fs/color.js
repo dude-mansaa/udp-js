@@ -17,38 +17,31 @@ let color = function(args){
 	let P = args.v * (100-args.s)/100;
 	let Q = args.v * (10000 -F * args.s)/10000;
 	let T = args.v * (10000 - args.s * (100-F))/10000;
-	switch(hi){
-	  case 0:
-	    r = args.v;
-	    g = T;
-	    b = P;
-	    break;
-	  case 1:
-	    r = Q;
-	    g = args.v;
-	    b = P;
-	    break;
-	  case 2:
-	    r = P;
-	    g = args.v;
-	    b = T;
-	    break;
-	  case 3:
-	    r = P;
-	    g = Q;
-	    b = args.v;
-	    break;
-	  case 4:
-	    r = T;
-	    g = P;
-	    b = args.v;
-	    break;
-	  case 5:
-	    r = args.v;
-	    g = P;
-	    b = Q;
-	    break;
-	}
+	if(hi === 0){
+		r = args.v;
+	    	g = T;
+	    	b = P;
+	}else if(hi === 1){
+		r = Q;
+	    	g = args.v;
+	    	b = P;
+	}else if(hi === 2){
+		r = P;
+	    	g = args.v;
+	    	b = T;
+	}else if(hi === 3){
+		r = P;
+	   	g = Q;
+	   	b = args.v;
+	}else if(hi === 4){
+		r = T;
+	    	g = P;
+	    	b = args.v;
+	}else if(hi === 5){
+		r = args.v;
+	    	g = P;
+	    	b = Q;
+	}	
 	let DR = r*255/100;
 	let DG = g*255/100;
 	let DB = b*255/100;
