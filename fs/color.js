@@ -1,5 +1,6 @@
 load('api_pwm.js');
 
+let floor = ffi('double floor(double)');
 let red = 4;
 let green = 15;
 let blue = 5;
