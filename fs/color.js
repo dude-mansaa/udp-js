@@ -18,7 +18,7 @@ let color = function(args){
 	let P = args.v * (1-args.s);
 	let Q = args.v * (1 -F * args.s);
 	let T = args.v * (1 - args.s * (1-F));
-	if(hi === 0){
+	if(i === 0){
 		r = args.v;
 	    	g = T;
 	    	b = P;
